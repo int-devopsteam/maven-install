@@ -1,0 +1,34 @@
+Pre Requisite Software
+-----------------------------
+Java (JDK) is the Pre - Requisite Software for Maven.
+
+javac -version
+
+Install Maven
+------------------
+Step1) Login as a root user and change the directory to /opt/
+
+sudo su -
+cd /opt/
+yum install wget unzip -y 
+
+Step2) Download the Maven Software
+
+wget https://dlcdn.apache.org/maven/maven-3/3.9.8/binaries/apache-maven-3.9.8-bin.zip
+
+unzip apache-maven-3.9.8-bin.zip   {to extract the file use unzip} 
+
+Step3) Set the class path/Environmental Variable
+
+For Specific User {root user}
+----------------------
+vi ~/.bash_profile
+
+export M2_HOME=/opt/apache-maven-3.9.8
+
+export PATH=$PATH:$M2_HOME/bin
+
+source ~/.bash_profile     ( using this command is imp without this mvn -version is not going to work)..
+
+
+mvn -version
